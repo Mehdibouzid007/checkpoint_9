@@ -1,0 +1,109 @@
+// Reverse a string
+function reverseString(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
+
+// Count characters
+function countCharacters(str) {
+    let count = 0;
+    while (str[count] !== undefined) {
+        count++;
+    }
+    return count;
+}
+
+// Capitalize words
+function capitalizeWords(sentence) {
+    let result = "";
+    let capitalizeNext = true;
+    for (let i = 0; sentence[i] !== undefined; i++) {
+        let char = sentence[i];
+        if (capitalizeNext && char >= 'a' && char <= 'z') {
+            let maj = String.fromCharCode(char.charCodeAt(0) - 32);
+            result += maj;
+            capitalizeNext = false;
+        } else {
+            result += char;
+            if (char === " ") {
+                capitalizeNext = true;
+            } else {
+                capitalizeNext = false;
+            }
+        }
+    }
+    return result;
+}
+
+// Max & Min values
+function findMax(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+function findMin(arr) {
+    let min = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+// Sum of array
+function sumArray(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+// Filter array
+function filterArray(arr, condition) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (condition(arr[i])) {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
+// Factorial
+function factorial(n) {
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+// Prime check
+function isPrime(n) {
+    if (n < 2) return false;
+    for (let i = 2; i < n; i++) {
+        if (n % i === 0) return false;
+    }
+    return true;
+}
+
+// Fibonacci sequence
+function fibonacci(n) {
+    let seq = [];
+    if (n >= 1) seq.push(0);
+    if (n >= 2) seq.push(1);
+    for (let i = 2; i < n; i++) {
+        seq.push(seq[i - 1] + seq[i - 2]);
+    }
+    return seq;
+}
